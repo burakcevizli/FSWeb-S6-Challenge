@@ -14,19 +14,39 @@
 .Karakter-main-div{
   display: flex;
   justify-content: center;
-  border: 1px solid lawngreen;
+  text-align: center;
+  align-items: center;
+  /* border: 1px solid lawngreen; */
 }
 
 .Button{
   justify-content: space-between;
   display: flex;
+  text-align: center;
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.7);
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding:0 2rem;
   color: white;
-  width: 50vw;
+  width: 30vw;
   margin-top: 0.8rem;
+  cursor: pointer;
+  flex-wrap: wrap;
 }
 .Birth-year{
+  text-align: center;
+  align-items: center;
+  padding: 0.3rem;
+  background-color: rgb(133, 133, 173);
+  border-radius: 15%;
   margin-left: 5rem;
+}
+.Data-Detay{
+  /* display: flex; */
+  text-align: center;
+  justify-content: center;
+  text-align: center;
+}
+.Episodes{
+  background-color: #d16262;
 }
