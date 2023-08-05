@@ -1,24 +1,25 @@
 // Karakter bileşeniniz buraya gelecek
 
 import React, { useEffect, useState } from 'react';
-import Episodes from './Episodes';
+
+import axios from 'axios';
 
 const Karakter = (props) => {
     const { karakterlerListesi } = props;
     const [dataGoster, setDataGoster] = useState(false)
-    const [episodeGoster , setEpisodeGoster] = useState(false)
-    const [episodes , setEpisodes] = useState([])
+    const [episodeGoster, setEpisodeGoster] = useState(false)
+    const [episodes, setEpisodes] = useState([])
 
 
     const dataFonksiyon = () => {
         setDataGoster(!dataGoster)
     }
 
-    const episodeGosterFonksiyon = () =>{
+    const episodeGosterFonksiyon = () => {
         setEpisodeGoster(!episodeGoster)
     }
 
-    
+
 
 
 
@@ -39,7 +40,7 @@ const Karakter = (props) => {
                             <li>Eye Color : {karakter.eye_color}</li>
                             <li>Hair-Color : {karakter.hair_color}</li>
                             <li>Skin-Color : {karakter.skin_color}</li>
-                            <li className='Episodes' onClick={episodeGosterFonksiyon}><Episodes episodes = {episodes}/></li>
+                            
                         </ul>
                     ) : null}
 
@@ -56,22 +57,28 @@ const Karakter = (props) => {
 
 
 
-useEffect(()=>{
+    useEffect(() => {
         axios
-        .get("https://swapi.dev/api/films/1/")
-        .then((response)=>{
-            console.log(response.data)
-            setEpisodes(response.data)
-        })
-        .catch((error)=>{
-            console.log("Error : " , error)
-        },[])
+            .get("https://swapi.dev/api/films/1/")
+            .then((response) => {
+                console.log(response.data)
+                setEpisodes(response.data.results)
+            })
+            .catch((error) => {
+                console.log("Error : ", error)
+            }, [])
     })
-    
-    
 
 
-    return (<div>{karakterler}</div>)
+
+
+    return (<div>
+
+        {karakterler}
+
+    </div>
+
+    )
 };
 
 export default Karakter;
