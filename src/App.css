@@ -34,19 +34,20 @@
   flex-wrap: wrap;
 }
 .Birth-year{
-  text-align: center;
-  align-items: center;
+  
   padding: 0.3rem;
   background-color: rgb(133, 133, 173);
   border-radius: 15%;
-  margin-left: 5rem;
+  margin-left: 15rem;
 }
-.Data-Detay{
-  /* display: flex; */
+.DataDetay ul{
   text-align: center;
+  align-items: center;
   justify-content: center;
-  text-align: center;
 }
-.Episodes{
-  background-color: #d16262;
+.DataDetay ul li{
+  margin-left: 0 auto;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
