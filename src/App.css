@@ -1,51 +1,58 @@
 .App {
   text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-family: "Press Start 2P", cursive;
 }
 .Header {
   color: #443e3e;
   text-shadow: 1px 1px 5px #fff;
   font-size: 3rem;
 }
-.Ok{
+.Ok {
   font-size: 3rem;
   font-weight: bold;
 }
 /* write your parent styles in here for your App.js */
-.Karakter-main-div{
+.Karakter-main-div {
   display: flex;
   justify-content: center;
   text-align: center;
   align-items: center;
   /* border: 1px solid lawngreen; */
+  font-family: "Poppins", sans-serif;
+  font-family: "Press Start 2P", cursive;
 }
 
-.Button{
+.Button {
   justify-content: space-between;
   display: flex;
   text-align: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.7);
-  font-size: 1.5rem;
-  padding:0 2rem;
+  font-size: 0.8rem;
+  padding: 0 2rem;
   color: white;
   width: 30vw;
   margin-top: 0.8rem;
   cursor: pointer;
   flex-wrap: wrap;
+  font-family: "Poppins", sans-serif;
+  font-family: "Press Start 2P", cursive;
 }
-.Birth-year{
-  
+.Birth-year {
   padding: 0.3rem;
   background-color: rgb(133, 133, 173);
   border-radius: 15%;
   margin-left: 15rem;
+  
 }
-.DataDetay ul{
+.DataDetay ul {
   text-align: center;
   align-items: center;
   justify-content: center;
+  list-style-type:none;
 }
-.DataDetay ul li{
+.DataDetay ul li {
   margin-left: 0 auto;
   text-align: center;
   align-items: center;
