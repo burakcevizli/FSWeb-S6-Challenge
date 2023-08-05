@@ -7,8 +7,8 @@ const Karakter = (props) => {
 
     const karakterler = karakterlerListesi.map((karakter) => (
         <div className='Karakter-main-div'>
-            <h1>{karakter.name}</h1>
-            <h1>{karakter.birth_year}</h1>
+            <button className='Button'><p>{karakter.name}</p> <p className='Birth-year'>{karakter.birth_year}</p></button>
+             
         </div>
 
 

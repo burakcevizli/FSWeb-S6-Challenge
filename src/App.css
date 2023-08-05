@@ -4,8 +4,29 @@
 .Header {
   color: #443e3e;
   text-shadow: 1px 1px 5px #fff;
+  font-size: 3rem;
+}
+.Ok{
+  font-size: 3rem;
+  font-weight: bold;
 }
 /* write your parent styles in here for your App.js */
 .Karakter-main-div{
   display: flex;
+  justify-content: center;
+  border: 1px solid lawngreen;
+}
+
+.Button{
+  justify-content: space-between;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.7);
+  font-size: 2rem;
+  padding:0 2rem;
+  color: white;
+  width: 50vw;
+  margin-top: 0.8rem;
+}
+.Birth-year{
+  margin-left: 5rem;
 }
