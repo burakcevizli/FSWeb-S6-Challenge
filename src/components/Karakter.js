@@ -35,6 +35,8 @@ const Karakter = (props) => {
                         <li>Skin-Color : {karakter.skin_color}</li>
                         <li><Episodes episodes={episodes} /></li>
                         <li><Episodes episodes = {episodes} /></li>
+                        <li><Episodes episodes = {episodes} /></li>
+                        <li><Episodes episodes = {episodes} /></li>
                         
                     </ul>
                 ) : null}

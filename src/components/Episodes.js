@@ -3,22 +3,22 @@ import { useState } from "react";
 const Episodes = (props) => {
     const { episodes } = props;
     const [episodeDetayGoster, setEpisodeDetayGoster] = useState(false);
-    
+
 
     const detayFonksiyon = () => {
         setEpisodeDetayGoster(!episodeDetayGoster);
     };
 
 
-    
+
 
     return (
         <div>
             <div className="Episodes-main">
 
-                <p onMouseEnter={detayFonksiyon}>Episode {episodes.episode_id} : {episodes.title}</p>
+                <p >Episode {episodes.episode_id} : {episodes.title}</p>
 
-                <p className="Episode-ok" >↓</p>
+                <p className="Episode-ok" onMouseEnter={detayFonksiyon} >↓</p>
 
             </div>
 
