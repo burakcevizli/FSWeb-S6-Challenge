@@ -7,7 +7,7 @@ const App = () => {
   // the state properties here.
 
   const [karakterlerListesi, setKarakterlerListesi] = useState([])
-  const [episodes , setEpisodes] = useState([])
+  const [episodes, setEpisodes] = useState([])
 
   // Fetch characters from the API in an effect hook. Remember, anytime you have a 
   // side effect in a component, you want to think about which state and/or props it should
@@ -23,16 +23,15 @@ const App = () => {
       .catch((error) => {
         console.log("Error is :", error)
       })
+
+    axios
+      .get("https://swapi.dev/api/films/1/")
+      .then((response) => {
+        console.log(response.data)
+        setEpisodes([response.data])
+      })
   }, [])
 
-  useEffect(()=>{
-    axios
-    .get("https://swapi.dev/api/films/1/")
-    .then((response)=>{
-      console.log(response.data)
-      setEpisodes(response.data)
-    })
-  },[])
 
   return (
     <div className="App">
@@ -40,7 +39,7 @@ const App = () => {
       <h1 className='Ok'>↓</h1>
 
       {karakterlerListesi.map((karakter, index) => {
-        return <Karakter key = {index} karakter={karakter} episodes = {episodes} />
+        return <Karakter key={index} karakter={karakter} episodes={episodes} />
       })}
 
 

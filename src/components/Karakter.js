@@ -7,7 +7,7 @@ import Episodes from './Episodes';
 const Karakter = (props) => {
     const { karakter, episodes } = props;
     const [dataGoster, setDataGoster] = useState(false)
-    const [kapat, setKapat] = useState(false);
+    
 
 
 
@@ -17,42 +17,36 @@ const Karakter = (props) => {
 
     
 
-    return (<div className='Karakter-main-div'>
-        <button className='Button' onClick={dataFonksiyon}>
+    return (
+        <div className='Karakter-main-div'>
+            <button className='Button' onClick={dataFonksiyon}>
 
-            <p>{karakter.name}</p> <p className='Birth-year'>{karakter.birth_year}</p>
-
-
-            <div className='DataDetay'>
-
-                {dataGoster ? (
-                    <ul>
-                        <li>Gender : {karakter.gender}</li>
-                        <li>Height : {karakter.height}</li>
-                        <li>Mass : {karakter.mass}</li>
-                        <li>Eye Color : {karakter.eye_color}</li>
-                        <li>Hair-Color : {karakter.hair_color}</li>
-                        <li>Skin-Color : {karakter.skin_color}</li>
-                        <li><Episodes episodes={episodes} /></li>
-                        <li><Episodes episodes = {episodes} /></li>
-                        <li><Episodes episodes = {episodes} /></li>
-                        <li><Episodes episodes = {episodes} /></li>
-                        
-                    </ul>
-                ) : null}
+                <p>{karakter.name}</p> <p className='Birth-year'>{karakter.birth_year}</p>
 
 
+                <div className='DataDetay'>
 
+                    {dataGoster ? (
+                        <ul>
+                            <li>Gender : {karakter.gender}</li>
+                            <li>Height : {karakter.height}</li>
+                            <li>Mass : {karakter.mass}</li>
+                            <li>Eye Color : {karakter.eye_color}</li>
+                            <li>Hair-Color : {karakter.hair_color}</li>
+                            <li>Skin-Color : {karakter.skin_color}</li>
+                            {episodes.map((episode) => (
+                                <li key={episode.episode_id}>
+                                    <Episodes episodeId={episode.episode_id} />
+                                </li>
+                            ))}
+                            
+                        </ul>
+                    ) : null}
+                </div>
 
-
-            </div>
-
-        </button>
-    </div>)
-
-
-
-
+            </button>
+        </div>
+    )
 };
 
 export default Karakter;

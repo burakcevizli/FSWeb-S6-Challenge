@@ -1,52 +1,51 @@
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const Episodes = (props) => {
-    const { episodes } = props;
-    const [episodeDetayGoster, setEpisodeDetayGoster] = useState(false);
 
+    const { episodeId } = props;
+
+    const [episodeData, setEpisodeData] = useState(null)
+
+    const [episodeDetayGoster, setEpisodeDetayGoster] = useState(false)
+
+    useEffect(() => {
+        axios
+            .get(`https://swapi.dev/api/films/${episodeId}/`)
+            .then((response) => {
+                setEpisodeData(response.data)
+            })
+    }, [episodeId])
 
     const detayFonksiyon = () => {
         setEpisodeDetayGoster(!episodeDetayGoster);
     };
 
-
-
-
     return (
         <div>
-            <div className="Episodes-main">
-
-                <p >Episode {episodes.episode_id} : {episodes.title}</p>
-
-                <p className="Episode-ok" onMouseEnter={detayFonksiyon} >↓</p>
-
-            </div>
-
-            <div className="Episode-detay">
-
-                {episodeDetayGoster ? (
-
-                    <ul>
-
-                        <li>{episodes.opening_crawl}</li>
-
-                        <li>Directed by: {episodes.director}</li>
-
-                        <li>Produced by: {episodes.producer}</li>
-
-                        <li>Release date: {episodes.release_date}</li>
-
-                    </ul>
-
-                ) : null}
-
-
-            </div>
-
-
+            {episodeData ? (
+                <div>
+                    <div className="Episodes-main">
+                        <p>
+                            Episode {episodeData.episode_id}: {episodeData.title}
+                        </p>
+                        <p className="Episode-ok" onMouseEnter={detayFonksiyon}>
+                            ↓
+                        </p>
+                    </div>
+                    <div className="Episode-detay">
+                        {episodeDetayGoster ? (
+                            <ul>
+                                <li>{episodeData.opening_crawl}</li>
+                                <li>Directed by: {episodeData.director}</li>
+                                <li>Produced by: {episodeData.producer}</li>
+                                <li>Release date: {episodeData.release_date}</li>
+                            </ul>
+                        ) : null}
+                    </div>
+                </div>
+            ) : null}
         </div>
-
-
     );
 };
 
