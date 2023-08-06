@@ -66,6 +66,18 @@ Gerekli şeyleri bitirdikten sonra çalışmanızı daha da ileri götürebilirs
 ## Esnek Mülakat Soruları
 
 1. React JS nedir ve hangi sorunları çözer? Yanıtınızı sınıfta tanıtılan kavramlarla ve web'deki kişisel araştırmanızla destekleyin.
+
+React, Facebook tarafından geliştirilen bir JavaScript kütüphanesidir ve kullanıcı arayüzü (UI) oluşturmak için kullanılır.
+
+Bileşen tabanlı bir arayüz tasarladıgı için zor kod yapısından bizi kurtarır.Veri arayüz senkranizasyonu sağlar.Dom işlemlerinden kaynaklı performans farklarından bizi korur.
+
+
 1. Bileşen statelerini tanımlayın.
+
+UseState , this.state vs.
+
 1. Propları açıklayın.
+
+Proplar bizim componentlere gönderdiğimiz parametredir diyedbiliriz.
+
 1. Side effektler nelerdir ve bir React bileşenindeki efektleri belirli state veya prop değişiklikleriyle nasıl senkronize edersiniz?

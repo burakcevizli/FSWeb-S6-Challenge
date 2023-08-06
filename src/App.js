@@ -25,7 +25,7 @@ const App = () => {
       })
 
     axios
-      .get("https://swapi.dev/api/films/1/")
+      .get("https://swapi.dev/api/films/4/")
       .then((response) => {
         console.log(response.data)
         setEpisodes([response.data])
