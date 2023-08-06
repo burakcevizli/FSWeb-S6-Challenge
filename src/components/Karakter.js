@@ -1,13 +1,13 @@
 // Karakter bileşeniniz buraya gelecek
 
-import React, { useEffect, useState } from 'react';
+import React, {useState } from 'react';
 import Episodes from './Episodes';
 
 
 const Karakter = (props) => {
     const { karakter, episodes } = props;
     const [dataGoster, setDataGoster] = useState(false)
-    
+
 
 
 
@@ -15,7 +15,7 @@ const Karakter = (props) => {
         setDataGoster(!dataGoster)
     }
 
-    
+
 
     return (
         <div className='Karakter-main-div'>
@@ -35,11 +35,29 @@ const Karakter = (props) => {
                             <li>Hair-Color : {karakter.hair_color}</li>
                             <li>Skin-Color : {karakter.skin_color}</li>
                             {episodes.map((episode) => (
-                                <li key={episode.episode_id}>
+                                <li >
                                     <Episodes episodeId={episode.episode_id} />
                                 </li>
+                                
                             ))}
-                            
+                            {episodes.map((episode) => (
+                                <li >
+                                    <Episodes episodeId={episode.episode_id} />
+                                </li>
+                                
+                            ))}
+                            {episodes.map((episode) => (
+                                <li >
+                                    <Episodes episodeId={episode.episode_id} />
+                                </li>
+                                
+                            ))}
+                            {episodes.map((episode) => (
+                                <li >
+                                    <Episodes episodeId={episode.episode_id} />
+                                </li>
+                                
+                            ))}
                         </ul>
                     ) : null}
                 </div>
