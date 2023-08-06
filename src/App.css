@@ -53,8 +53,16 @@
   list-style-type:none;
 }
 .DataDetay ul li {
+  margin-top: 0.7rem;
   margin-left: 0 auto;
   text-align: center;
   align-items: center;
   justify-content: center;
+}
+.Episodes-main{
+  display: flex;
+  justify-content: space-between;
+}
+.Episode-ok{
+  margin-left: 5rem;
 }

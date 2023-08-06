@@ -1,11 +1,13 @@
 // Karakter bileşeniniz buraya gelecek
 
 import React, { useEffect, useState } from 'react';
+import Episodes from './Episodes';
 
 
 const Karakter = (props) => {
-    const { karakter } = props;
+    const { karakter, episodes } = props;
     const [dataGoster, setDataGoster] = useState(false)
+    const [kapat, setKapat] = useState(false);
 
 
 
@@ -13,6 +15,7 @@ const Karakter = (props) => {
         setDataGoster(!dataGoster)
     }
 
+    
 
     return (<div className='Karakter-main-div'>
         <button className='Button' onClick={dataFonksiyon}>
@@ -30,6 +33,8 @@ const Karakter = (props) => {
                         <li>Eye Color : {karakter.eye_color}</li>
                         <li>Hair-Color : {karakter.hair_color}</li>
                         <li>Skin-Color : {karakter.skin_color}</li>
+                        <li><Episodes episodes={episodes} /></li>
+                        <li><Episodes episodes = {episodes} /></li>
                         
                     </ul>
                 ) : null}
